@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/weatherstyle.css" />
+    <script
+      src="https://kit.fontawesome.com/66228f9b39.js"
+      crossorigin="anonymous"
+    ></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container">
+        <div class="row main">
+          <div class="col-6 city">
+            <h1 id="mainCity">Leeds</h1>
+            <h2 class="date">Today is</h2>
+            <h2><strong>+<span class="temperatureC">18</span></strong> /+<span class="temperatureC">22</span>⛅<span class="tempC">°C</span> | <span class="tempF">°F</span></h2>
+          </div>
+          <div class="col-5 details">
+            <h3 class="humidity">
+              <span id="precipitation">Precipitation 3%</span> <br />
+             <span id="humidity"> Humidity: 77%</span> <br />
+              <span id="wind">Wind: 6 km/h</span>
+            </h3>
+            <h3 class="time">11:13 AM</h3>
+          </div>
+        </div>
+      </div>
+      <h3 class="search">
+       <form id="searchForm"> 
+        <input
+          type="text"
+          placeholder="Search another city.........."
+          autofocus="on"
+          id="searchInput"
+        />
+        <input type="submit" value="Search">
+        <label for="search"><i
+          class="fa-solid fa-magnifying-glass"
+        ></i></form></label>
+      </form>
+      </h3>
+     <button class="currentLocation">
+      Current Location
+     </button>
+      <div class="container week">
+        <div class="row">
+          <div class="col">
+            <h3 class="tomorrow">
+              🌦️<br /><strong><span class="temperatureC">19</span>°</strong><br /><span class="temperatureC">22</span>°<br /><span class="nextDay">Fri</span>
+            </h3>
+          </div>
+          <div class="col">
+            <h3 class="tomorrow">
+              ⛅<br /><strong><span class="temperatureC">20</span>°</strong><br /><span class="temperatureC">21</span>°<br /><span class="nextDay">Sat</span>
+
+            </h3>
+          </div>
+          <div class="col">
+            <h3 class="tomorrow">
+              ☀️<br /><strong><span class="temperatureC">24</span>°</strong><br /><span class="temperatureC">26</span>°<br /><span class="nextDay">Sun</span>
+            </h3>
+          </div>
+          <div class="col">
+            <h3 class="tomorrow">
+              🌧️<br /><strong><span class="temperatureC">17</span>°</strong><br /><span class="temperatureC">19</span>°<br /><span class="nextDay">Mon</span>
+            </h3>
+          </div>
+          <div class="col">
+            <h3 class="tomorrow">
+              ☁️<br /><strong><span class="temperatureC">19</span>°</strong><br /><span class="temperatureC">21</span>°<br /><span class="nextDay">Tue</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+h3 {
+    color: gray;
+}
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+h3 {
+    text-align: center;
+}
+.tempC {
+    font-weight: bold;
+}
+.tempC:hover {
+    color: blue;
+    cursor: pointer;
+}
+.tempF:hover {
+    color:blue;
+cursor: pointer;
+}
+.main {
+    margin-top: 15px;
+}
+.city {
+border: 1px solid #858489;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px auto;
+}
+.details{
+    border: 1px solid #858489;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px auto;
+}
+
+.humidity {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.humidity:hover {
+    color: black;
+}
+.time {
+    color: #858489;
+}
+.time:hover {
+color: black;
+}
+.search {
+    text-align: left;
+    margin: 5px auto;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+.search:hover {
+    color: black;
+}
+.currentLocation {
+
+    margin: 5px auto;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #858489;
+        border-radius: 5px;
+}
+.week {
+        border: 1px solid #858489;
+            border-radius: 5px;
+            margin: 10px auto;
+}
+.tomorrow {
+    border: 1px solid #d7d6df;
+    border-radius: 5px;
+    margin: 10px auto;
+
+}
+.tomorrow:hover {
+    color: black;
+}
