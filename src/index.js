@@ -188,7 +188,7 @@ citySelector.innerHTML =  `${city}`;
 
 let temperatureL = Math.round(response.data.main.temp);
 let temperatureSelector1 = document.querySelector(".temperatureC");
-temperatureSelector1.innerHTML = `${temperatureL}`;
+temperatureSelector1.innerHTML = temperatureL
   
 let temperatureFeel = Math.round(response.data.main.feels_like);
 let temperatureSelector2 = document.querySelectorAll(".temperatureC");
@@ -196,9 +196,9 @@ temperatureSelector2[1].innerHTML = temperatureFeel
   
 let humidity =  Math.round(response.data.main.humidity);
 let humiditySelector = document.querySelector("#humidity");
-humiditySelector.innerHTML = `Humidity: ${humidity}% `
+humiditySelector.innerHTML = humidity
 
 let wind =  Math.round(response.data.wind.speed);
 let windSelector = document.querySelector("#wind");
-windSelector.innerHTML = `Wind: ${wind} km/h`
+windSelector.innerHTML = wind
 }
