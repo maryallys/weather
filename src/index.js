@@ -103,21 +103,18 @@ times = times + 1;
 // temperature converter
 
 let tempArray = document.querySelectorAll(".temperatureC");
-let tempArrayC = []
-let farenheit = []
-let tempArrayF = []
 let lenthTemp = tempArray.length
+let tempArrayC = []
+let tempArrayF = []
 
 times = 0
 while (times < lenthTemp) {
-farenheit = [Math.round(tempArray[times].innerHTML*9/5+32)]
+let farenheit = [Math.round(tempArray[times].innerHTML*9/5+32)]
 tempArrayF.push(farenheit)
 tempArrayC.push(tempArray[times].innerHTML);
 times = times + 1;
-//console.log(farenheit)
 }
-//console.log(tempArrayF);
-//convertor from C to F
+
 function tempCtoF(){
 times = 0
 while (times < lenthTemp) {
@@ -150,12 +147,10 @@ function cityInput(event) {
   event.preventDefault();
   let form = document.querySelector("#searchInput");
   let cityIn = form.value;
-  //console.log(form);
-  //console.log(cityIn);
-let cityNew = document.querySelector("#mainCity");
-cityNew.innerHTML = cityIn
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityIn}&units=metric`;
-axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  let cityNew = document.querySelector("#mainCity");
+  cityNew.innerHTML = cityIn
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityIn}&units=metric`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
   return cityIn;
 }
 

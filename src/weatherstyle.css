@@ -23,6 +23,7 @@ h3 {
 }
 
   .footer {
+    margin: 10px;
       text-align: center;
       color: #3f3e3e;
       text-decoration: none;
@@ -73,16 +74,17 @@ color: black;
 }
 .search {
     text-align: left;
-    margin: 5px auto;
+    margin: 0;
     padding: 5px 10px;
     font-size: 18px;
+    max-width: 350px;
 }
 .search:hover {
     color: black;
 }
 .currentLocation {
 
-    margin: 5px auto;
+    margin: 10px;
     padding: 5px 5px;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
@@ -92,14 +94,19 @@ color: black;
 .week {
         border: 1px solid #858489;
             border-radius: 5px;
-            margin: 10px auto;
+            margin: 10px;
+            max-width: 380px;
 }
 .tomorrow {
     border: 1px solid #d7d6df;
     border-radius: 5px;
-    margin: 5px auto;
+    margin: 5px;
 
 }
 .tomorrow:hover {
     color: black;
+}
+.topInfo {
+    max-width: 400px;
+    margin: 0 0 0 0;
 }
