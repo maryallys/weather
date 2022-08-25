@@ -21,28 +21,24 @@ h3 {
 .all {
     max-width: 500px;
 }
-
-  .footer {
-    margin: 10px;
-      text-align: center;
-      color: #3f3e3e;
-      text-decoration: none;
-      font-style: oblique;
-      font-size: 16px;
-      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-.tempC {
+.topInfo {
+    max-width: 400px;
+    margin: 0 0 0 0;
+}
+.tempC{
+    text-decoration: none; 
+    color: black;
+}
+.tempF {
+    text-decoration: none;
+    color: black;
+}    
+.active {
     font-weight: bold;
-}
-.tempC:hover {
-    color: blue;
-    cursor: pointer;
-}
-.tempF:hover {
     color:blue;
-cursor: pointer;
+    cursor: default;
 }
+
 .main {
     margin-top: 15px;
 }
@@ -106,7 +102,14 @@ color: black;
 .tomorrow:hover {
     color: black;
 }
-.topInfo {
-    max-width: 400px;
-    margin: 0 0 0 0;
-}
+
+ .footer {
+     margin: 10px;
+     text-align: center;
+     color: #3f3e3e;
+     text-decoration: none;
+     font-style: oblique;
+     font-size: 16px;
+     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+ }

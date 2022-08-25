@@ -116,6 +116,8 @@ times = times + 1;
 }
 
 function tempCtoF(){
+  changeTempFtoC.classList.remove("active");
+  changeTempCtoF.classList.add("active");
 times = 0
 while (times < lenthTemp) {
     tempArray[times].innerHTML=tempArrayF[times]
@@ -126,6 +128,8 @@ while (times < lenthTemp) {
 }}
 //convertor from F to C
 function tempFtoC(){
+ changeTempFtoC.classList.add("active");
+  changeTempCtoF.classList.remove("active");
 times = 0
 while (times < lenthTemp) {
     tempArray[times].innerHTML=tempArrayC[times]
