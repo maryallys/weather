@@ -31,16 +31,25 @@
           <div class="col-6 city">
             <h1 id="mainCity">Leeds</h1>
             <h2 class="date">Today is</h2>
-            <h2><strong>+<span class="temperatureC">18</span></strong> /+<span class="temperatureC">22</span>⛅
+            <h2><strong>+<span class="temperatureC" id="temp1">18</span></strong> /+
+              <span class="temperatureC" id="temp2">22</span>
               <a href="#" class="tempC active">°C</a> |
               <a href="#" class="tempF">°F</a>
+              <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="clear"
+              id="icon"
+              width="60px"/>
                 </h2>
           </div>
           <div class="col-5 details">
             <h3 class="humidity">
-             Precipitation <span id="precipitation">3</span>% <br />
              Humidity: <span id="humidity">77</span>% <br />
-             Wind: <span id="wind">6</span> km/h
+             Wind: <span id="wind">6</span> km/h<br />
+              <span id="typeW">cloudy</span>
+            </h3>
+            <h3>
+              Last updated:
             </h3>
             <h3 class="time">11:13 AM</h3>
           </div>
