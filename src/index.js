@@ -105,14 +105,14 @@ function showTemperature(response) {
   let humiditySelector = document.querySelector("#humidity");
   let windSelector = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-   temperatureC1 = response.data.main.temp;
-   temperatureC2 = response.data.main.feels_like;
+   temperatureC1 = response.data.main.temp_min;
+   temperatureC2 = response.data.main.temp_max;
    getForecast(response.data.coord);
    
    
    citySelector.innerHTML =  response.data.name;
-   temperatureSelector1.innerHTML = Math.round(response.data.main.temp);
-   temperatureSelector2.innerHTML = Math.round(response.data.main.feels_like)
+   temperatureSelector1.innerHTML = Math.round(response.data.main.temp_min);
+   temperatureSelector2.innerHTML = Math.round(response.data.main.temp_max)
    typeSelector.innerHTML = response.data.weather[0].description.charAt(0).toUpperCase()+response.data.weather[0].description.slice(1);
    humiditySelector.innerHTML = Math.round(response.data.main.humidity)
    windSelector.innerHTML = Math.round(response.data.wind.speed)
@@ -182,41 +182,37 @@ function tempFtoC(){
 
 //forecast for the next 5 days
 function weathercast(response){
-  console.log(response.data.daily);
+let forecastDay = response.data.daily;
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = ""
-let dayShort =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let counter = now.getDay()+1;
-let fiveDays = [];
-let times = 0;
 
-while (times < 5) {
-if (counter > 7) {
-  counter = counter - 7}
-fiveDays.push(dayShort[counter])    
-counter = counter+1;
-times = times + 1;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let dayShort =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return dayShort[day];
 }
 
 forecastHTML = `<div class="row">`;
-fiveDays.forEach(function (day) {
+forecastDay.forEach(function (forecastDay, index) {
+  if (index > 0 & index <6){
 //  forecastHTML = forecastHTML + `<div class="container week">
 forecastHTML = forecastHTML + `<div class="col-2">
             <h3 class="tomorrow">
                <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
+              src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
               alt="clear"
               id="icon"
-              width="60px"/>
+              width="50px"/>
               <br />
-              <strong><span class="temperatureC">19</span>°</strong>
+              <strong><span class="temperatureC">${Math.round(forecastDay.temp.max)}</span>°</strong>
               <br />
-              <span class="temperatureC">22</span>°<br />
-              <span class="nextDay">${day}</span>
+              <span class="temperatureC">${Math.round(forecastDay.temp.min)}</span>°<br />
+              <span class="nextDay">${formatDay(forecastDay.dt)}</span>
             </h3>
           
           </div>`
-})
+}})
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 };
