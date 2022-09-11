@@ -26,18 +26,8 @@ h3 {
     margin: 0 0 0 0;
 }
 .tempC{
-    text-decoration: none; 
-    color: #858489;
-}
-.tempF {
-    text-decoration: none;
-    color: #858489;
-}    
-.active {
-    color: black;
-    cursor: default;
-}
-
+font-weight: bold;
+}  
 .main {
     margin-top: 15px;
 }
@@ -58,14 +48,8 @@ border: 1px solid #858489;
     text-align: left;
     margin-bottom: 20px;
 }
-.humidity:hover {
-    color: black;
-}
 .time {
     color: #858489;
-}
-.time:hover {
-color: black;
 }
 .search {
     text-align: left;
@@ -73,9 +57,6 @@ color: black;
     padding: 5px 10px;
     font-size: 18px;
     max-width: 350px;
-}
-.search:hover {
-    color: black;
 }
 .currentLocation {
 
