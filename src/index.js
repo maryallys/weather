@@ -88,6 +88,13 @@ currentLocationButton.addEventListener("click", showPosition);
 
 let temperatureC1 = null
 let temperatureC2 = null;
+let coord = null;
+
+function getForecast(coordinates) {
+  let apiUrl =  `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+  console.log(apiUrl);
+  axios.get(apiUrl).then(weathercast)
+}
 
 function showTemperature(response) {
   console.log(response.data);
@@ -100,6 +107,8 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
    temperatureC1 = response.data.main.temp;
    temperatureC2 = response.data.main.feels_like;
+   getForecast(response.data.coord);
+   
    
    citySelector.innerHTML =  response.data.name;
    temperatureSelector1.innerHTML = Math.round(response.data.main.temp);
@@ -171,8 +180,9 @@ function tempFtoC(){
  temp2.innerHTML = Math.round(temperatureC2);
 }
 
-
-function weathercast(){
+//forecast for the next 5 days
+function weathercast(response){
+  console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = ""
 let dayShort =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -208,12 +218,5 @@ forecastHTML = forecastHTML + `<div class="col-2">
           </div>`
 })
   forecastHTML = forecastHTML + `</div>`;
- console.log(forecastHTML);
   forecastElement.innerHTML = forecastHTML;
 };
-
-weathercast()
-
-//forecast for the next 5 days
-
-//
