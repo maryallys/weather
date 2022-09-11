@@ -23,15 +23,7 @@ let month = [
   "November",
   "December"
 ];
-let dayShort =[
-"Sun",
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat"
-]
+
 
 function formatDate(today) {
   today = `${days[now.getDay()]}, ${month[now.getMonth()]} ${now.getDate()}`;
@@ -56,28 +48,7 @@ date.innerHTML = formatDate()
 let time = document.querySelector(".time");
 time.innerHTML = currentTime()
 let counter = now.getDay()+1;
-//forecast for the next 5 days
 
-function dayTommorow(dayT){
-if (counter < 7) {
-    dayT = [dayShort[counter]]
-}
-else {
-    counter = counter - 7
-    dayT = [dayShort[counter]];    
-}
-counter = counter+1;
-return dayT
-}
-
-let fiveDays = [dayTommorow()];
-let nextDays = document.querySelectorAll(".nextDay");
-let times = 0;
-  while (times < 4) {
-  fiveDays.push(dayTommorow());
-  nextDays[times].innerHTML = fiveDays[times];
-  times = times + 1;
-}
 //Temperature API. See API key on the top.
 
 //update weather in current city
@@ -200,3 +171,56 @@ function tempFtoC(){
  temp1.innerHTML = Math.round(temperatureC1);
  temp2.innerHTML = Math.round(temperatureC2);
 }
+function weathercast(){
+let forecastElement = document.querySelector("#forecast");
+let forecastHTML = ""
+forecastHTML = `<div class="row">`;
+
+let dayShort =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+dayShort.forEach(function (day) {
+//  forecastHTML = forecastHTML + `<div class="container week">
+forecastHTML = forecastHTML + `<div class="col-2">
+            <h3 class="tomorrow">
+               <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="clear"
+              id="icon"
+              width="60px"/>
+              <br />
+              <strong><span class="temperatureC">19</span>°</strong>
+              <br />
+              <span class="temperatureC">22</span>°<br />
+              <span class="nextDay">${day}</span>
+            </h3>
+          
+          </div>`
+})
+  forecastHTML = forecastHTML + `</div>`;
+ console.log(forecastHTML);
+  forecastElement.innerHTML = forecastHTML;
+};
+
+weathercast()
+
+//forecast for the next 5 days
+
+//function dayTommorow(dayT){
+//if (counter < 7) {
+//    dayT = [dayShort[counter]]
+//}
+//else {
+//    counter = counter - 7
+//    dayT = [dayShort[counter]];    
+//}
+//counter = counter+1;
+//return dayT
+//}
+
+//let fiveDays = [dayTommorow()];
+//let nextDays = document.querySelectorAll(".nextDay");
+//let times = 0;
+//  while (times < 4) {
+//  fiveDays.push(dayTommorow());
+//  nextDays[times].innerHTML = fiveDays[times];
+//  times = times + 1;
+//}
