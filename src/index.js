@@ -47,7 +47,6 @@ let date = document.querySelector(".date");
 date.innerHTML = formatDate()
 let time = document.querySelector(".time");
 time.innerHTML = currentTime()
-let counter = now.getDay()+1;
 
 //Temperature API. See API key on the top.
 
@@ -171,13 +170,26 @@ function tempFtoC(){
  temp1.innerHTML = Math.round(temperatureC1);
  temp2.innerHTML = Math.round(temperatureC2);
 }
+
+
 function weathercast(){
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = ""
-forecastHTML = `<div class="row">`;
-
 let dayShort =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-dayShort.forEach(function (day) {
+let counter = now.getDay()+1;
+let fiveDays = [];
+let times = 0;
+
+while (times < 5) {
+if (counter > 7) {
+  counter = counter - 7}
+fiveDays.push(dayShort[counter])    
+counter = counter+1;
+times = times + 1;
+}
+
+forecastHTML = `<div class="row">`;
+fiveDays.forEach(function (day) {
 //  forecastHTML = forecastHTML + `<div class="container week">
 forecastHTML = forecastHTML + `<div class="col-2">
             <h3 class="tomorrow">
@@ -204,23 +216,4 @@ weathercast()
 
 //forecast for the next 5 days
 
-//function dayTommorow(dayT){
-//if (counter < 7) {
-//    dayT = [dayShort[counter]]
-//}
-//else {
-//    counter = counter - 7
-//    dayT = [dayShort[counter]];    
-//}
-//counter = counter+1;
-//return dayT
-//}
-
-//let fiveDays = [dayTommorow()];
-//let nextDays = document.querySelectorAll(".nextDay");
-//let times = 0;
-//  while (times < 4) {
-//  fiveDays.push(dayTommorow());
-//  nextDays[times].innerHTML = fiveDays[times];
-//  times = times + 1;
-//}
+//
